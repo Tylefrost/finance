@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<div class="form-control mx-auto w-auto">
+    <table class="center">
+        <thead>
+            <tr>
+                <th>Company</th>
+                <th>Shares Owned</th>
+                <th>Price</th>
+                <th>Value</th>
+                <th>Cash Remaining</th>
+                <th>Grand Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.company }}</td>
+                    <td>{{ entry.shares }}</td>
+                    <td>{{ entry.price }}</td>
+                    <td>{{ entry.total }}</td>
+                    <td>{{ cash }}</td>
+                    <td>{{ grandtotal }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
